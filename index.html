@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="conteiner">
+
+        <h3>Cadastro</h3>
+        <form action="" id="formulario">
+
+            <label for="Nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Nome" >
+                <div id="erroNome" class="erro"></div>
+
+
+            <label for="Email">Email:</label>
+                <input type="email" id="email" placeholder="Email">
+                <div id="erroEmail" class="erro"></div>
+
+
+            <label for="Telefone">Telefone:</label>
+                <input type="number" id="telefone" placeholder="Telefone">
+                <div id="erroTelefone" class="erro"></div>
+
+            <label for="CPF">CPF:</label>
+                <input type="number" id="Cpf" placeholder="CPF">
+                <div id="erroCPF" class="erro"></div>
+
+            <label for="Cidade">Cidade:</label>
+                <input type="text" id="cidade" placeholder="Cidade">
+                <div id="erroCidade" class="erro"></div>
+                
+            <label for="Moradia">Moradia:</label>
+                <input type="text" id="moradia" placeholder="Apartamento ou casa">
+                <div id="erroMoradia" class="erro"></div>
+
+            <label for="Quintal">Sua moradia tem quintal:</label>
+                <input type="text" id="quintal" placeholder="Sim ou não">
+                <div id="erroQuintal" class="erro"></div>
+
+            <label for="Pet">Você já teve algum pet antes:</label>
+                <input type="text" id="pet" placeholder="Sim ou não">
+                <div id="erroPet" class="erro"></div>
+
+            <label for="Horas">Quantas horas o pet ficaria sozinho:</label>
+                <input type="number" id="horas" placeholder="Horas">
+                <div id="erroHoras" class="erro"></div>
+
+            <label for="Motivo">O motivo da adoção:</label>
+                <input type="text" id="motivo" placeholder="Motivo">
+                <div id="erroMotivo" class="erro"></div>
+
+            <label for="Termos">Aceito o termo de responsabilidade</label>
+                <input type="checkbox" id="termos">
+                <div id="erroTermos" class="erro"></div>
+
+    
+
+
+
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+        <div class="resultado" id="resultado"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
