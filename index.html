@@ -26,30 +26,34 @@
                 <div id="erroTelefone" class="erro"></div>
 
             <label for="CPF">CPF:</label>
-                <input type="number" id="Cpf" placeholder="CPF">
+                <input type="number" id="cpf" placeholder="CPF">
                 <div id="erroCPF" class="erro"></div>
+
+            <label for="Idade">Idade:</label>
+                <input type="number" id="idade" placeholder="Idade">
+                <div id="erroIdade" class="erro"></div>
 
             <label for="Cidade">Cidade:</label>
                 <input type="text" id="cidade" placeholder="Cidade">
                 <div id="erroCidade" class="erro"></div>
                 
             <label for="Moradia">Moradia:</label>
-                <input type="checkbox" id="moradia" placeholder="Apartamento"> Apartamento
-                <input type="checkbox" id="moradia" placeholder="Casa"> Casa
+                <input type="radio" name="moradia" value="apartamento"> Apartamento
+                <input type="radio" name="moradia" value="casa"> Casa
                 <div id="erroMoradia" class="erro"></div>
 
             <label for="Quintal">Sua moradia tem quintal:</label>
-                <input type="checkbox" id="quintal" placeholder="Sim"> Sim
-                <input type="checkbox" id="quintal" placeholder="Nao"> Não
+                <input type="radio" name="quintal" value="sim"> Sim
+                <input type="radio" name="quintal" value="nao"> Não
                 <div id="erroQuintal" class="erro"></div>
 
             <label for="Pet">Você já teve algum pet antes:</label>
-                <input type="checkbox" id="quintal" placeholder="Sim"> Sim
-                <input type="checkbox" id="quintal" placeholder="Nao"> Não
+                <input type="radio" name="pet" value="sim"> Sim
+                <input type="radio" name="pet" value="nao"> Não
                 <div id="erroPet" class="erro"></div>
 
             <label for="Horas">Quantas horas você consegue ficar com o seu:</label>
-                <input type="time" id="horas" placeholder="Horas">
+                <input type="number" id="horas" placeholder="Horas">
                 <div id="erroHoras" class="erro"></div>
 
             <label for="Motivo">O motivo da adoção:</label> <br>

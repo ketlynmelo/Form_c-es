@@ -2,6 +2,9 @@ let form = document.getElementById('formulario');
 
     form.addEventListener('submit', function(e){
 
+
+        const cpfsExistentes = [123454678];
+
         e.preventDefault();
 
         let valido = true;
@@ -12,11 +15,12 @@ let form = document.getElementById('formulario');
         let cpf = document.getElementById('cpf').value;
         let idade = document.getElementById('idade').value;
         let cidade = document.getElementById('cidade').value;
-        let moradia = document.getElementById('moradia').value;
-        let quintal = document.getElementById('quintal').value;
         let horas = document.getElementById('horas').value;
         let motivo = document.getElementById('motivo').value;
-        let termos = document.getElementById('Termos').value;
+        let termos = document.getElementById('termos').value;
+        let moradia = document.querySelector('input[name="moradia"]:checked');
+        let quintal = document.querySelector('input[name="quintal"]:checked');
+        let pet = document.querySelector('input[name="pet"]:checked');
 
 
 
@@ -50,33 +54,48 @@ let form = document.getElementById('formulario');
             valido = false;
         }
 
-        if(idade.length < 18){
+        if (cpfsExistentes.includes(cpf)){
+        document.getElementById('erroCPF').textContent = "CPF já cadastrado";
+        valido = false;
+    }
+
+        if(idade < 18){
             
             document.getElementById('erroIdade').textContent = 'Idade insuficiente, deve ser pelo menos 18 anos ';
             valido = false;
         }
 
-        if(moradia= Apartamento){
-           let local = prompt("O seu local aceita animais?");
-           if (local=="Não || não || Nao || Nao"){
-            
-
-           }
-
-
-        }
-
-        if(quintal.length ){
-            document.getElementById('erroQuintal').textContent = 'Resposta incorreta, deve falar sim ou não!';
+        if (moradia && quintal){
+        if (moradia.value === "apartamento" && quintal.value === "sim"){
+            erroQuintal.textContent = "Apartamento não pode ter quintal";
             valido = false;
-
         }
 
-        if(pet.length ){
-            document.getElementById('erroPet').textContent = 'Resposta incorreta, deve falar sim ou não!';
-            valido = false;
-
+        if (moradia.value === "apartamento"){
+            if (!confirm("O local permite animais?")){
+                valido = false;
+            }
         }
+
+        if (moradia.value === "casa"){
+            if (!confirm("O quintal é seguro?")){
+                valido = false;
+            }
+        }
+    }
+
+        if (pet && pet.value === "nao"){
+        alert("A ONG poderá acompanhar sua adaptação.");
+    }
+
+    if (motivo.includes("não tenho dinheiro")){
+        erroMotivo.textContent = "Condição financeira insuficiente";
+        valido = false;
+    }
+
+    if (motivo.includes("hoje")){
+        alert("Sua adoção parece muito impulsiva, pense melhor quando deseja adotar ");
+    }
 
         if(motivo.length < 10){
             document.getElementById('erroIdade').textContent = 'Sua explicação deve ter no minimo 10 caracteres';
@@ -84,6 +103,23 @@ let form = document.getElementById('formulario');
 
         }
 
+         if (isNaN(horas)){
+           document.getElementById('erroHoras').textContent = "Horas inválidas";
+            valido = false;
+    }
+
+        if (horas > 8){
+           let justificativa = prompt("O pet não deve ficar sozinho por mais de 8 horas, justifique o motivo:");
+           if (!justificativa){
+            valido = false;
+                  }
+
+        }
+
+        if (!termos){
+        document.getElementById('erroTermos').textContent = "Aceite os termos";
+        valido = false;
+        }
 
         if(valido){
             let resultado = document.getElementById('resultado');
@@ -97,19 +133,11 @@ let form = document.getElementById('formulario');
             CPF: ${cpf} <br>
             Idade: ${idade} <br>
             Cidade: ${cidade} <br>
-            Tipo de moradia: ${moradia} <br>
-            Possui quintal: ${quintal} <br>
-            Já teve pet antes: ${pet} <br>
-            Quantas horas o animal ficará sozinho por dia: ${horas} <br>
-            Motivo da adoção: ${motivo} <br>
 
             `;
 
             form.reset();
         }
-
-
-
-
+    
     })
 
