@@ -13,7 +13,6 @@ body{
     color: rgb(0, 0, 0);
 }
 .div{
-   
     background-color: #f3ebfd;
     padding: 10px;
     margin: 10px;
@@ -29,4 +28,18 @@ textarea{
 }
 input[type= "radio"] {
     cursor: pointer;
+}
+#image{
+    position: fixed;
+    width: 400px;
+    height: 700px;
+    margin-left: 600px;
+}
+button{
+    background-color: hsl(267, 65%, 78%);
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+    border-radius: 10px ;
+    border: solid 1px rgb(255, 255, 255);
 }
